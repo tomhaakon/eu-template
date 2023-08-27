@@ -4,6 +4,9 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { createI18n } from "vue-i18n";
 
+import App from "./App.vue";
+import router from "./router";
+
 import en from "./locales/en.json";
 import bg from "./locales/bg.json";
 import no from "./locales/no.json";
@@ -13,9 +16,6 @@ const i18n = createI18n({
 	fallbackLocale: "en",
 	messages: { en, bg, no },
 });
-
-import App from "./App.vue";
-import router from "./router";
 
 const app = createApp(App);
 

@@ -1,1 +1,12 @@
-{}
+{
+	"pages.about": "about us",
+	"pages.contact": "contacts",
+	"pages.home": "home",
+	"pages.interesting": "interesting",
+	"pages.partners": "Partners",
+	"vertical-menu.business-models": "Business models",
+	"vertical-menu.circular-economy": "What is Circular Economy",
+	"vertical-menu.educational-content": "Educational Content",
+	"vertical-menu.master-lab": "Master Lab",
+	"vertical-menu.vertical-menu": "vertical menu"
+}

@@ -1,1 +1,12 @@
-{}
+{
+	"pages.about": "За нас",
+	"pages.contact": "контакти",
+	"pages.home": "Начало",
+	"pages.interesting": "IИнтересно",
+	"pages.partners": "Партньори",
+	"vertical-menu.business-models": "Бизнес модели",
+	"vertical-menu.circular-economy": "Какво е кръгова икономика",
+	"vertical-menu.educational-content": "Образователно съдържание",
+	"vertical-menu.master-lab": "Магистър Лаб",
+	"vertical-menu.vertical-menu": "Вертикално меню"
+}
