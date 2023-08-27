@@ -1,0 +1,6 @@
+# .gitignore content
+node_modules/
+*.log
+secret.txt
+best-practice.md
+eu-template-oppgave.md
