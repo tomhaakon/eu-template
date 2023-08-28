@@ -8,9 +8,13 @@ TailwindCSS
 DaisyUI
 i18n
 
-## Custom CSS classes
+## Colors
 
-headline, sub-headline, body-text
+#eaf1dd
+#2c4326
+#86b559
+#4f6228
+#1e1e8f
 
 ### Compile and Hot-Reload for Development
 
