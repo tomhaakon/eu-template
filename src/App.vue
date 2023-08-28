@@ -1,11 +1,6 @@
-<script setup>
-  import { RouterLink, RouterView } from 'vue-router';
-  import Footer from './components/Footer.vue';
-</script>
-
 <template>
   <div class="drawer">
-    <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+    <input id="my-drawer-3" type="checkbox" class="drawer-toggle" ref="drawerCheckbox" />
     <div class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
       <div class="w-full navbar sticky px-4 py-10">
@@ -111,14 +106,32 @@
     <!-- Drawer links -->
     <div class="drawer-side">
       <label for="my-drawer-3" class="drawer-overlay"></label>
+
       <ul class="menu p-4 w-80 min-h-full bg-base-200">
-        <li><RouterLink to="/interesting">Interesting</RouterLink></li>
-        <li><RouterLink to="/about">About us</RouterLink></li>
-        <li><RouterLink to="/partners">Partners</RouterLink></li>
-        <li><RouterLink to="/contact">Contact us</RouterLink></li>
-        <li><RouterLink to="/">Login</RouterLink></li>
+        <RouterLink to="/">
+          <img
+            src="@/assets/logo.png"
+            class="relative object-contain h-14"
+            @click="handleClick()"
+          />
+        </RouterLink>
+        <li><RouterLink to="/interesting" @click="handleClick()">Interesting</RouterLink></li>
+        <li><RouterLink to="/about" @click="handleClick()">About us</RouterLink></li>
+        <li><RouterLink to="/partners" @click="handleClick()">Partners</RouterLink></li>
+        <li><RouterLink to="/contact" @click="handleClick()">Contact us</RouterLink></li>
+        <li><RouterLink to="/" @click="handleClick()">Login</RouterLink></li>
       </ul>
     </div>
   </div>
 </template>
-<!-- <div data-v-29101f5e="" class="col col-12" style="margin-top: 50px;"></div> -->
+<script setup>
+  import { RouterLink, RouterView } from 'vue-router';
+  import Footer from './components/Footer.vue';
+  import { ref } from 'vue';
+
+  const drawerCheckbox = ref(null);
+
+  const handleClick = () => {
+    drawerCheckbox.value.checked = !drawerCheckbox.value.checked;
+  };
+</script>
