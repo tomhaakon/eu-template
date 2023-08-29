@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>NewsDialog</div>
 </template>
 
 <script setup></script>

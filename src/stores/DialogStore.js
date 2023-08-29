@@ -1,21 +1,25 @@
 import { defineStore } from 'pinia';
 
-export const useDialogStoreStore = defineStore('DialogStore', {
+export const useDialogStore = defineStore('DialogStore', {
   state: () => ({
-    openDialog: null,
+    activeDialog: null,
   }),
   actions: {
     openContactDialog() {
-      this.openDialog = 'contactDialog';
+      this.activeDialog = 'contactDialog';
+      console.log(this.activeDialog);
     },
     openLoginDialog() {
-      this.openDialog = 'loginDialog';
+      this.activeDialog = 'loginDialog';
+      console.log(this.activeDialog);
     },
     openNewsDialog() {
-      this.openDialog = 'newsDialog';
+      this.activeDialog = 'newsDialog';
+      console.log(this.activeDialog);
     },
     closeDialog() {
-      this.openDialog = null;
+      this.activeDialog = null;
+      console.log(this.activeDialog);
     },
   },
   getters: {},
