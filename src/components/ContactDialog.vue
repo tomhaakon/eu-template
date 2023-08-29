@@ -8,7 +8,9 @@
       <div
         class="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
       >
-        <button class="btn btn-ghost" @click="dialogStore.closeDialog()">x</button>
+        <div class="text-right">
+          <button class="btn btn-ghost" @click="dialogStore.closeDialog()">x</button>
+        </div>
         <form>
           <!--Name input-->
           <div class="relative mb-6" data-te-input-wrapper-init>

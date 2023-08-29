@@ -3,12 +3,18 @@
   <section v-if="dialogStore.activeDialog === 'contactDialog'">
     <ContactDialog />
   </section>
+  <section v-if="dialogStore.activeDialog === 'loginDialog'">
+    <LoginDialog />
+  </section>
+  <section v-if="dialogStore.activeDialog === 'newsDialog'">
+    <NewsDialog />
+  </section>
 
   <div class="drawer" :class="[dialogStore.activeDialog ? 'fixed' : '']">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" ref="drawerCheckbox" />
     <div class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
-      <div class="w-full navbar sticky px-4 py-10">
+      <div class="w-full navbar sticky px-4 py-8">
         <div class="flex-1 px-2 mx-2">
           <RouterLink to="/">
             <img src="@/assets/logo.png" class="relative object-contain h-14" />
@@ -23,7 +29,7 @@
               xmlns:xlink="http://www.w3.org/1999/xlink"
               version="1.1"
               viewBox="0 0 260 220"
-              class="inline-block h-8 w-8 fill-gray-700"
+              class="inline-block h-8 w-8 fill-color2"
             >
               <g
                 style="
@@ -75,7 +81,7 @@
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                class="inline-block w-6 h-6 stroke-gray-700"
+                class="inline-block w-6 h-6 stroke-color2"
               >
                 <path
                   stroke-linecap="round"
@@ -100,8 +106,8 @@
         </div>
       </div>
       <!-- Divider in color -->
-      <section class="h-8 w-full mx-auto px-4">
-        <div class="bg-color3 w-full h-2 rounded-3xl"></div>
+      <section class="w-full mx-auto px-4 pb-3">
+        <div class="bg-color3 w-full h-1.5 rounded-3xl"></div>
       </section>
       <!-- Page content here -->
 
@@ -128,7 +134,9 @@
         <li class="cursor-pointer mx-4" @click="handleClick(), dialogStore.openContactDialog()">
           Contact us
         </li>
-        <li><RouterLink to="/" @click="handleClick()">Login</RouterLink></li>
+        <li class="cursor-pointer mx-4" @click="handleClick(), dialogStore.openLoginDialog()">
+          Login
+        </li>
       </ul>
     </div>
   </div>
