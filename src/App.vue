@@ -72,7 +72,7 @@
         </section>
         <li class="pt-10">
           <RouterLink to="/interesting" @click="handleClick()">
-            <SubTitleComponent :subTitle="'Interesting'" />
+            <SubTitleComponent :subTitle="$t('pages.interesting')" />
           </RouterLink>
         </li>
         <li>
