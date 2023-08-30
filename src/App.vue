@@ -9,87 +9,31 @@
   <section v-if="dialogStore.activeDialog === 'newsDialog'">
     <NewsDialog />
   </section>
+  <!-- overlay -->
+  <div
+    v-if="dialogStore.activeDialog !== null"
+    class="fixed h-full w-full bg-black z-10 opacity-20"
+  ></div>
 
-  <div class="drawer" :class="[dialogStore.activeDialog ? 'fixed' : '']">
+  <!-- drawer -->
+  <div class="drawer" :class="[dialogStore.activeDialog ? 'fixed blur-[1px]' : '']">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" ref="drawerCheckbox" />
     <div class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
       <div class="w-full navbar sticky px-4 py-8">
         <div class="flex-1 px-2 mx-2">
-          <RouterLink to="/">
-            <img src="@/assets/logo.png" class="relative object-contain h-14" />
-          </RouterLink>
+          <RouterLink to="/"> <Logo class="h-14" /></RouterLink>
         </div>
         <!-- Mobile Navbar -->
         <div class="flex-none lg:hidden px-4">
           <!-- Icon: Contact -->
           <div class="cursor-pointer" @click="dialogStore.openContactDialog()">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              viewBox="0 0 260 220"
-              class="inline-block h-8 w-8 fill-color2"
-            >
-              <g
-                style="
-                  stroke: none;
-                  stroke-width: 0;
-                  stroke-dasharray: none;
-                  stroke-linecap: butt;
-                  stroke-linejoin: miter;
-                  stroke-miterlimit: 10;
-                  opacity: 1;
-                "
-                transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
-              >
-                <path
-                  d="M 81.353 50.79 L 63.143 36.799 l 18.302 -15.87 c 0.834 -0.723 0.924 -1.986 0.2 -2.82 c -0.723 -0.834 -1.985 -0.925 -2.82 -0.201 L 58.682 35.374 c -0.005 0.004 -0.009 0.008 -0.014 0.012 l -4.921 4.267 L 28.669 17.907 c -0.834 -0.724 -2.096 -0.633 -2.82 0.201 c -0.723 0.834 -0.634 2.097 0.201 2.82 l 18.44 15.99 l -12.442 9.912 c -0.864 0.688 -1.006 1.946 -0.318 2.81 c 0.395 0.496 0.977 0.754 1.565 0.754 c 0.436 0 0.876 -0.143 1.244 -0.435 l 13.024 -10.375 l 4.874 4.226 c 0.376 0.326 0.843 0.489 1.31 0.489 c 0.467 0 0.934 -0.163 1.31 -0.489 l 5.002 -4.337 l 18.858 14.488 c 0.363 0.279 0.792 0.414 1.217 0.414 c 0.599 0 1.193 -0.268 1.586 -0.781 C 82.393 52.718 82.229 51.463 81.353 50.79 z"
-                  style="
-                    stroke: none;
-                    stroke-width: 2;
-                    stroke-dasharray: none;
-                    stroke-linecap: butt;
-                    stroke-linejoin: miter;
-                    stroke-miterlimit: 10;
-
-                    opacity: 1;
-                  "
-                  transform=" matrix(1 0 0 1 0 0) "
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M 84.004 10.598 H 23.49 c -3.306 0 -5.996 2.69 -5.996 5.996 v 1.616 c -1.125 -0.827 -2.636 -1.044 -3.982 -0.453 c -0.87 0.383 -2.006 0.88 -3.19 1.394 l -0.032 0.014 c -2.526 1.095 -4.385 1.88 -5.378 2.269 c -0.741 0.29 -1.362 0.72 -1.845 1.278 c -8.173 9.429 1.178 26.658 14.071 39.551 c 9.539 9.539 21.449 17.14 30.82 17.139 c 3.296 -0.001 6.278 -0.941 8.731 -3.066 c 0.557 -0.483 0.987 -1.104 1.278 -1.846 c 0.395 -1.009 1.171 -2.847 2.304 -5.456 c 0.507 -1.168 0.996 -2.286 1.373 -3.144 c 0.621 -1.413 0.355 -3.01 -0.578 -4.148 h 22.939 c 3.307 0 5.996 -2.69 5.996 -5.996 v -39.15 C 90 13.288 87.31 10.598 84.004 10.598 z M 56.603 67.439 c -1.152 2.656 -1.947 4.538 -2.36 5.592 c -0.05 0.127 -0.113 0.23 -0.173 0.282 c -7.118 6.171 -22.543 -2.315 -34.105 -13.877 C 8.402 47.872 -0.078 32.445 6.088 25.331 c 0.053 -0.061 0.156 -0.124 0.283 -0.174 c 1.063 -0.416 2.944 -1.21 5.592 -2.359 v 0 c 1.173 -0.509 2.296 -1 3.168 -1.373 l 7.266 12.256 l -4.505 8.393 c -0.843 1.57 -0.562 3.471 0.698 4.732 l 14.007 14.007 c 1.262 1.26 3.164 1.541 4.731 0.696 l 8.404 -4.505 l 12.245 7.267 l 0.006 0.01 C 57.603 65.144 57.11 66.268 56.603 67.439 z M 86.001 55.744 c 0 1.101 -0.896 1.997 -1.997 1.997 H 54.809 l -7.038 -4.177 c -1.201 -0.712 -2.711 -0.744 -3.942 -0.083 l -8.406 4.503 l -14.008 -14.02 l 4.505 -8.392 c 0.66 -1.231 0.628 -2.741 -0.084 -3.943 l -4.343 -7.319 v -7.716 c 0 -1.101 0.896 -1.997 1.997 -1.997 h 60.514 c 1.101 0 1.997 0.896 1.997 1.997 V 55.744 z"
-                  style="
-                    stroke: none;
-                    stroke-width: 2;
-                    stroke-dasharray: none;
-                    stroke-linecap: butt;
-                    stroke-linejoin: miter;
-                    stroke-miterlimit: 10;
-                    opacity: 1;
-                  "
-                  transform=" matrix(1 0 0 1 0 0) "
-                  stroke-linecap="round"
-                />
-              </g>
-            </svg>
+            <ContactButton />
           </div>
           <!-- Icon: Hamburger -->
           <div>
             <label for="my-drawer-3" class="btn btn-square btn-ghost">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                class="inline-block w-6 h-6 stroke-color2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
+              <HamburgerButton />
             </label>
           </div>
         </div>
@@ -106,8 +50,8 @@
         </div>
       </div>
       <!-- Divider in color -->
-      <section class="w-full mx-auto px-4 pb-3">
-        <div class="bg-color3 w-full h-1.5 rounded-3xl"></div>
+      <section class="mx-auto w-full px-4">
+        <Divider class="bg-color3" />
       </section>
       <!-- Page content here -->
 
@@ -121,21 +65,30 @@
       <label for="my-drawer-3" class="drawer-overlay"></label>
 
       <ul class="menu p-4 w-80 min-h-full bg-base-200">
-        <RouterLink to="/">
-          <img
-            src="@/assets/logo.png"
-            class="relative object-contain h-14"
-            @click="handleClick()"
-          />
-        </RouterLink>
-        <li><RouterLink to="/interesting" @click="handleClick()">Interesting</RouterLink></li>
-        <li><RouterLink to="/about" @click="handleClick()">About us</RouterLink></li>
-        <li><RouterLink to="/partners" @click="handleClick()">Partners</RouterLink></li>
-        <li class="cursor-pointer mx-4" @click="handleClick(), dialogStore.openContactDialog()">
-          Contact us
+        <RouterLink to="/"> <Logo class="h-14" @click="handleClick()" /></RouterLink>
+        <section class="mx-auto w-full px-1 pt-10 pb-5">
+          <Divider class="bg-color3" />
+        </section>
+        <li>
+          <RouterLink to="/interesting" @click="handleClick()">
+            <SubTitleComponent :subTitle="'Interesting'" />
+          </RouterLink>
         </li>
-        <li class="cursor-pointer mx-4" @click="handleClick(), dialogStore.openLoginDialog()">
-          Login
+        <li>
+          <RouterLink to="/about" @click="handleClick()"
+            ><SubTitleComponent :subTitle="$t('pages.about')"
+          /></RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/partners" @click="handleClick()"
+            ><SubTitleComponent :subTitle="$t('pages.partners')" />
+          </RouterLink>
+        </li>
+        <li class="cursor-pointer" @click="handleClick(), dialogStore.openContactDialog()">
+          <SubTitleComponent :subTitle="$t('pages.contact')" />
+        </li>
+        <li class="cursor-pointer" @click="handleClick(), dialogStore.openLoginDialog()">
+          <SubTitleComponent :subTitle="$t('pages.login')" />
         </li>
       </ul>
     </div>
@@ -147,9 +100,21 @@
   import Footer from './components/Footer.vue';
   import { ref } from 'vue';
   import { useDialogStore } from './stores/DialogStore.js';
+
+  //import dialog
   import NewsDialog from './components/NewsDialog.vue';
   import ContactDialog from './components/ContactDialog.vue';
   import LoginDialog from './components/LoginDialog.vue';
+
+  //import buttons logo etc
+  import ContactButton from './components/buttons/ContactButton.vue';
+  import HamburgerButton from './components/buttons/HamburgerButton.vue';
+  import Divider from './components/Divider.vue';
+  import Logo from './components/Logo.vue';
+
+  //text components
+  import TitleComponent from '@/components/TitleComponent.vue';
+  import SubTitleComponent from '@/components/SubTitleComponent.vue';
 
   //consts
   const dialogStore = useDialogStore();

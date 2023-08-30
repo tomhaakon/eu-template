@@ -14,28 +14,10 @@
           {{ $t('pages.home.sub-headline') }}
         </p>
       </div>
-      <div class="space-y-5 pt-20 relative">
-        <div
-          @click="dialogStore.openNewsDialog()"
-          class="border-color3 cursor-pointer font-NunitoSans border-2 rounded-md w-full p-8"
-        >
-          <div><p class="text-2xl font-bold text-color2">About the project</p></div>
-          <div><p class="text-color4">content</p></div>
-        </div>
-        <div
-          @click="dialogStore.openNewsDialog()"
-          class="border-color3 cursor-pointer font-NunitoSans border-2 rounded-md w-full h-24 p-4"
-        >
-          <div><p class="text-2xl font-bold text-color2">news2</p></div>
-          <div><p class="text-color4">content</p></div>
-        </div>
-        <div
-          @click="dialogStore.openNewsDialog()"
-          class="border-color3 cursor-pointer font-NunitoSans border-2 rounded-md w-full h-24 p-4"
-        >
-          <div><p class="text-2xl font-bold text-color2">news3</p></div>
-          <div><p class=" ">content</p></div>
-        </div>
+      <div class="space-y-4 pt-20 relative">
+        <NewsComponent :title="'About the project'" :subTitle="'info more jep'" />
+        <NewsComponent :title="'Available resoruces'" :subTitle="'click ehre for wtt'" />
+        <NewsComponent :title="'Partners'" :subTitle="'blabla yepyep skksuu mnajjj mjau'" />
       </div>
     </div>
   </main>
@@ -43,9 +25,19 @@
 <script setup>
   //imports
   import { useDialogStore } from '../stores/DialogStore';
+  import { ref } from 'vue';
+
+  //text components
+  import TitleComponent from '../components/TitleComponent.vue';
+  import SubTitleComponent from '../components/SubTitleComponent.vue';
+
+  //components
+  import NewsComponent from '../components/NewsComponent.vue';
 
   //consts
   const dialogStore = useDialogStore();
+
+  //end
 </script>
 <style scoped>
   .text-shadow {
