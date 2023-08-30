@@ -63,13 +63,14 @@
     <!-- Drawer links -->
     <div class="drawer-side">
       <label for="my-drawer-3" class="drawer-overlay"></label>
-
       <ul class="menu p-4 w-80 min-h-full bg-base-200">
-        <RouterLink to="/"> <Logo class="h-14" @click="handleClick()" /></RouterLink>
-        <section class="mx-auto w-full px-1 pt-10 pb-5">
+        <RouterLink to="/" class=""> <Logo class="h-14" @click="handleClick()" /></RouterLink>
+
+        <LanguageSelector />
+        <section class="mx-auto w-full px-1 py-5">
           <Divider class="bg-color3" />
         </section>
-        <li>
+        <li class="pt-10">
           <RouterLink to="/interesting" @click="handleClick()">
             <SubTitleComponent :subTitle="'Interesting'" />
           </RouterLink>
@@ -89,9 +90,6 @@
         </li>
         <li class="cursor-pointer" @click="handleClick(), dialogStore.openLoginDialog()">
           <SubTitleComponent :subTitle="$t('pages.login')" />
-        </li>
-        <li class="pt-10">
-          <LanguageSelector />
         </li>
       </ul>
     </div>

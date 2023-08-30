@@ -12,7 +12,7 @@
           <div class="text-right"><CancelButton class="" /></div>
         </div>
 
-        <form class="p-4">
+        <form class="px-4 py-10">
           <!--Name input-->
           <div class="relative mb-6" data-te-input-wrapper-init>
             <input

@@ -12,6 +12,7 @@ import bg from './locales/bg.json';
 import no from './locales/no.json';
 
 const i18n = createI18n({
+  legacy: false, // you must set `false`, to use Composition API
   locale: 'en',
   fallbackLocale: 'en',
   messages: { en, bg, no },

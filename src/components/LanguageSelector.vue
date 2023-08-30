@@ -1,35 +1,59 @@
 <template>
-  <div class="relative inline-block text-left">
-    <button @click="isOpen = !isOpen" class="btn"></button>
-    <div
-      v-if="isOpen"
-      class="origin-top-right absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-    >
-      <div class="py-1">
-        <a @click="setLanguage('en')" class="block px-4 py-2 text-sm cursor-pointer">
-          <img src="../assets/icon/english.png" class="w-8 inline-block mr-2" />
-        </a>
-        <a @click="setLanguage('bg')" class="block px-4 py-2 text-sm cursor-pointer">
-          <img src="../assets/icon/bulgaria.png" class="w-8 inline-block mr-2" />
-        </a>
-        <a @click="setLanguage('no')" class="block px-4 py-2 text-sm cursor-pointer">
-          <img src="../assets/icon/norway.png" class="w-8 inline-block mr-2" />
-        </a>
-      </div>
+  <div class="pr-2">
+    <p class="text-right hidden">{{ $t('vertical-menu.select-language') }}</p>
+  </div>
+  <div class="flex space-x-4 justify-end pr-2">
+    <div :class="activeLanguage == 'en' ? 'border-b-4  border-color3 rounded-lg' : ' '">
+      <img
+        src="../assets/icon/english.png"
+        class="w-8 h-8 cursor-pointer"
+        @click="changeLanguage('en')"
+      />
+    </div>
+    <div :class="activeLanguage == 'bg' ? 'border-b-4 border-color3 rounded-lg' : ' '">
+      <img
+        src="../assets/icon/bulgaria.png"
+        :class="activeLanguage == 'bg' ? ' opacity-100' : ' '"
+        class="w-8 h-8 cursor-pointer"
+        @click="changeLanguage('bg')"
+      />
+    </div>
+    <div :class="activeLanguage == 'no' ? 'border-b-4 border-color3 rounded-lg' : ' '">
+      <img
+        src="../assets/icon/norway.png"
+        :class="activeLanguage == 'no' ? ' opacity-100' : ' '"
+        class="w-8 h-8 cursor-pointer"
+        @click="changeLanguage('no')"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
+  // import //
   import { ref } from 'vue';
+  import { useI18n } from 'vue-i18n';
 
-  const isOpen = ref(false);
-  const setLanguage = (lang) => {
-    console.log(`Language set to ${lang}`);
-    // Your logic to set the language
+  // const //
+  const i18n = useI18n({ useScope: 'global' });
+  const storedLanguage = localStorage.getItem('userLanguage');
+
+  // ref //
+  const activeLanguage = ref();
+
+  // Functions //
+
+  //change language, set i18n locale and localStorage
+  const changeLanguage = (newLang) => {
+    i18n.locale.value = newLang;
+    localStorage.setItem('userLanguage', newLang);
+    activeLanguage.value = newLang;
   };
-</script>
 
-<style scoped>
-  /* Add any additional styles if needed */
-</style>
+  //if localStorage(userLanguage) is empty, set to i18n default
+  if (!storedLanguage) {
+    localStorage.setItem('userLanguage', i18n.locale.value);
+    activeLanguage.value = i18n.locale.value;
+  }
+  // end //
+</script>
