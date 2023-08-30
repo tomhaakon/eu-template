@@ -90,6 +90,9 @@
         <li class="cursor-pointer" @click="handleClick(), dialogStore.openLoginDialog()">
           <SubTitleComponent :subTitle="$t('pages.login')" />
         </li>
+        <li class="pt-10">
+          <LanguageSelector />
+        </li>
       </ul>
     </div>
   </div>
@@ -111,6 +114,7 @@
   import HamburgerButton from './components/buttons/HamburgerButton.vue';
   import Divider from './components/Divider.vue';
   import Logo from './components/Logo.vue';
+  import LanguageSelector from './components/LanguageSelector.vue';
 
   //text components
   import TitleComponent from '@/components/TitleComponent.vue';
