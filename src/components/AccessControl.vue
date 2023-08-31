@@ -1,37 +1,58 @@
 <template>
-  <div class="fixed w-screen h-screen backdrop-blur-md z-50 flex items-center justify-center">
-    <div class="flex flex-col px-5 join join-vertical">
-      <div class="w-full flex justify-center join-item">
-        <p class="font-bold text-3xl">Hello, to view this page you need a password.</p>
-      </div>
-      <div class="w-full flex justify-center join-item">
+  <div class="fixed w-screen h-screen backdrop-blur-md z-50 flex justify-center items-center">
+    <div class="join join-vertical max-w-xs py-10 border-2 bg-white fixed w-full flex px-4">
+      <div class="w-full flex join-item flex-col px-4">
+        <p class="text-lg font-bold pb-10" :class="isClientBlocked ? ' 0' : ''">
+          This site is under development and not open to the public. <br />Do you have a access-key
+          type in below.
+        </p>
         <input
           v-model="enteredPassword"
-          placeholder="Enter Password"
-          class="join input input-primary"
+          type="password"
+          class="bg-gray-200 rounded-none join-item input-ghost input focus:outline-none text-center"
+          :class="isClientBlocked ? ' btn-disabled' : ''"
         />
+        <button
+          @click="checkPassword"
+          class="btn btn-primary join-item"
+          :class="isClientBlocked ? 'btn-disabled' : ''"
+        >
+          enter
+        </button>
       </div>
-      <div class="w-full flex justify-center join-item">
-        <button @click="checkPassword" class="btn btn-primary">Check Password</button>
-      </div>
-      <div class="w-full flex justify-center join-item">
-        <p v-if="isPasswordCorrect">Password is correct!</p>
-        <p v-else-if="passwordChecked">Password is incorrect.</p>
+
+      <div class="w-full flex justify-center join-item px-4 py-4 text-center">
+        <div v-if="isPasswordCorrect">
+          <p>Password is correct!</p>
+        </div>
+        <div v-else-if="passwordChecked">
+          <div v-if="isClientBlocked">
+            <p>You are blocked from making further attempts.</p>
+          </div>
+          <p v-else>Password is incorrect. You have {{ attemptCounter }} tries left.</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+  //imports
   import { ref } from 'vue';
 
-  const enteredPassword = ref('');
+  //refs
   const isPasswordCorrect = ref(false);
   const passwordChecked = ref(false);
 
-  const knownPassword = 'asd123'; // This should be hashed and stored securely
-  const key = 'your-secret-key'; // This should be secure and ideally server-side
+  const enteredPassword = ref('');
+  const attemptCounter = ref(2);
+  const isClientBlocked = ref(localStorage.getItem('isBlocked') === 'true');
 
+  //consts
+  const knownPassword = 'prios';
+  const key = 'lapskaus';
+
+  //functions
   const hashPassword = async (password) => {
     const cryptoKey = await window.crypto.subtle.importKey(
       'raw',
@@ -53,10 +74,41 @@
       .join('');
   };
 
+  //check password
   const checkPassword = async () => {
+    // if counter is 0, set localStorage to true
+    if (attemptCounter.value <= 0) {
+      console.log('block');
+      localStorage.setItem('isBlocked', 'true');
+      isClientBlocked.value = true;
+
+      return; // Early exit if the client becomes blocked
+    }
+    if (isClientBlocked.value) {
+      return; // Early exit if the client is already blocked
+    }
+
+    // crypt correct password
     const knownHash = await hashPassword(knownPassword);
+    // crypt user input
     const enteredHash = await hashPassword(enteredPassword.value);
+
+    //password is checked and is correct
     isPasswordCorrect.value = knownHash === enteredHash;
+
+    //password checked and it is not correct
     passwordChecked.value = true;
+
+    if (!isPasswordCorrect.value) {
+      attemptCounter.value = attemptCounter.value - 1;
+      console.log('checking key');
+      console.log(attemptCounter.value);
+    }
   };
+  const initialize = () => {
+    isClientBlocked.value = localStorage.getItem('isBlocked') === 'true';
+  };
+  initialize(); // Call this to initialize the state based on localStorage
+
+  //end
 </script>
