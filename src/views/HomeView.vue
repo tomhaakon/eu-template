@@ -15,9 +15,18 @@
         </p>
       </div>
       <div class="space-y-4 pt-20 relative">
-        <NewsComponent :title="'About the project'" :subTitle="'info more jep'" />
-        <NewsComponent :title="'Available resoruces'" :subTitle="'click ehre for wtt'" />
-        <NewsComponent :title="'Partners'" :subTitle="'blabla yepyep skksuu mnajjj mjau'" />
+        <NewsComponent
+          :title="$t('pages.home.about-project')"
+          :subTitle="$t('pages.home.about-project.sub')"
+        />
+        <NewsComponent
+          :title="$t('pages.home.available-sources')"
+          :subTitle="$t('pages.home.available-sources.sub')"
+        />
+        <NewsComponent
+          :title="$t('pages.home.partners')"
+          :subTitle="$t('pages.home.partners.sub')"
+        />
       </div>
     </div>
   </main>

@@ -1,10 +1,15 @@
 {
   "": "",
-
   "pages.about": "Om oss",
   "pages.about.content": "Teksten er ikke ferdigstilt. 'NGIS-prosjektet' har som mål å ta tak i utfordringene som Stara Zagora står overfor, en av de tre bulgarske regionene som er sterkt påvirket av overgangen fra en lineær til en sirkulær økonomi. Med en dominerende kullbasert energisektor står regionens bedrifter overfor et presserende behov for å tilpasse seg. Imidlertid hindrer mangelfull forberedelse og bevissthet overgangsprosessen. Som svar fokuserer prosjektets hovedmål på å øke konkurranseevnen til bulgarske SMB-er innen grønn industrinnovasjon og fremme samarbeid mellom Norge og bulgarske enheter i saker om sirkulær økonomi. Ved å bygge kapasiteten til lokale SMB-er, introdusere norsk know-how i forretningsmodeller for sirkulær økonomi, og fremme adopsjonen av bærekraftige praksiser, søker prosjektet å muliggjøre en jevnere overgang og redusere virksomhetenes miljøavtrykk. De direkte mottakerne av prosjektet er SMB-er i Stara Zagora-regionen, mens indirekte mottakere inkluderer alle medlemmer av Handelskammeret og SMB-er utover regionen som kan benytte seg av prosjektets nettressurser og opplæringsmateriell. Gjennom disse innsatsene aspirerer NGIS-prosjektet til å drive økonomisk vekst, bærekraft og kunnskapsutveksling i streben etter en sirkulær økonomi.",
   "pages.about.content-title": "",
   "pages.contact": "Kontakt",
+  "pages.home.about-project": "Om prosjektet",
+  "pages.home.about-project.sub": "Info om prosjeketet",
+  "pages.home.available-sources": "Tilgjengelige midler",
+  "pages.home.available-sources.sub": "info om tilgjengelige midler",
+  "pages.home.partners": "Partnere",
+  "pages.home.partners.sub": "Se våre partnere her",
   "pages.home": "Hjem",
   "pages.home.sub-headline": "Tosidig partnerskap under EØS-midlene Program for næringsutvikling, innovasjon og SMB-er, Bulgaria",
   "pages.interesting": "interessant",
