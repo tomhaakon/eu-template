@@ -6,13 +6,13 @@
     <div class="z-20 h-screen flex items-center">
       <!-- content -->
 
-      <div class="mx-4 w-full max-w-md rounded-lg bg-white p-6">
+      <div class="mx-4 w-full max-w-md rounded-lg bg-white">
         <div class="flex-row flex">
-          <div class="w-full pb-4"><TitleComponent :title="'Contact us'" /></div>
-          <div class="text-right"><CancelButton class="absolute right-4 top-48" /></div>
+          <div class="w-full p-4"><TitleComponent :title="'Contact us'" /></div>
+          <div class="text-right"><CancelButton class="" /></div>
         </div>
 
-        <form>
+        <form class="p-4">
           <!--Name input-->
           <div class="relative mb-6" data-te-input-wrapper-init>
             <input
