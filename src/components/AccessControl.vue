@@ -53,8 +53,10 @@
   const accessControl = ref(localStorage.getItem('accessControl') === 'true');
 
   //consts
-  const knownPassword = 'prios';
-  const key = 'lapskaus';
+  //pwassword
+  // Fetch environment variables using import.meta
+  const knownPassword = import.meta.env.VITE_APP_PASSWORD;
+  const key = import.meta.env.VITE_APP_KEY;
 
   //functions
   const hashPassword = async (password) => {
@@ -110,8 +112,6 @@
 
     if (!isPasswordCorrect.value) {
       attemptCounter.value = attemptCounter.value - 1;
-      console.log('checking key');
-      console.log(attemptCounter.value);
     }
   };
   const initialize = () => {

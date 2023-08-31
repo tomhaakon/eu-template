@@ -7,6 +7,7 @@ vue-router
 TailwindCSS
 DaisyUI
 i18n
+Web Crypto API
 
 ## Colors
 
