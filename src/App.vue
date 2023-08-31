@@ -1,5 +1,7 @@
 <template>
   <!-- dialog -->
+  <AccessControl />
+
   <section v-if="dialogStore.activeDialog === 'contactDialog'">
     <ContactDialog />
   </section>
@@ -106,6 +108,7 @@
   import NewsDialog from './components/NewsDialog.vue';
   import ContactDialog from './components/ContactDialog.vue';
   import LoginDialog from './components/LoginDialog.vue';
+  import AccessControl from './components/AccessControl.vue';
 
   //import buttons logo etc
   import ContactButton from './components/buttons/ContactButton.vue';
