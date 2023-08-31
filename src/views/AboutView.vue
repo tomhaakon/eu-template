@@ -1,7 +1,7 @@
 <template>
-  <main class="relative mx-auto container bg-slate-200 px-4 h-full">
-    <TitleComponent :title="$t('pages.about.content-title')" class="py-5" />
-    <CommonTextComponent :text="$t('pages.about.content')" />
+  <main class="mx-auto bg-slate-200 px-4">
+    <TitleComponent :title="$t('pages.about.content-title')" class="pt-4" />
+    <CommonTextComponent :text="$t('pages.about.content')" class="py-10 px-4" />
   </main>
 </template>
 

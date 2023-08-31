@@ -1,32 +1,41 @@
 <template>
-  <main class="relative mx-auto container bg-slate-200 px-4 h-full">
-    <div class="px-4">
-      <div class="absolute inset-0 px-4 pt-4">
-        <img src="@/assets/home-picture.jpg" class="object-none opacity-80 rounded-lg" />
+  <main class="pt-4 bg-gray-200">
+    <div class="absolute px-2">
+      <img src="@/assets/home-picture.jpg" class="object-cover h-screen opacity-80 rounded-md" />
+    </div>
+    <div class="relative pt-24 px-4">
+      <TitleComponent :title="$t('website.title')" class="text-shadow text-white" />
+    </div>
+    <div class="relative pt-24 px-4">
+      <SubTitleComponent
+        :subTitle="$t('pages.home.sub-headline')"
+        class="text-white text-shadow px-6"
+      />
+      <p class="text-xl text-white font-bold max-w-prose"></p>
+    </div>
+    <div class="py-24 relative px-4 space-y-5">
+      <div class="pt-20">
+        <RouterLink to="/about">
+          <NewsComponent
+            :title="$t('pages.home.about-project')"
+            :subTitle="$t('pages.home.about-project.sub')"
+        /></RouterLink>
       </div>
-      <div class="relative pt-8">
-        <p class="font-NunitoSans text-4xl text-shadow text-white font-bold max-w-prose">
-          {{ $t('website.title') }}
-        </p>
+      <div>
+        <RouterLink to="/about">
+          <NewsComponent
+            :title="$t('pages.home.available-sources')"
+            :subTitle="$t('pages.home.available-sources.sub')"
+          />
+        </RouterLink>
       </div>
-      <div class="relative pt-8">
-        <p class="font-NunitoSans text-shadow text-shadow text-xl text-white font-bold max-w-prose">
-          {{ $t('pages.home.sub-headline') }}
-        </p>
-      </div>
-      <div class="space-y-4 pt-20 relative">
-        <NewsComponent
-          :title="$t('pages.home.about-project')"
-          :subTitle="$t('pages.home.about-project.sub')"
-        />
-        <NewsComponent
-          :title="$t('pages.home.available-sources')"
-          :subTitle="$t('pages.home.available-sources.sub')"
-        />
-        <NewsComponent
-          :title="$t('pages.home.partners')"
-          :subTitle="$t('pages.home.partners.sub')"
-        />
+      <div>
+        <RouterLink to="/partners">
+          <NewsComponent
+            :title="$t('pages.home.partners')"
+            :subTitle="$t('pages.home.partners.sub')"
+          />
+        </RouterLink>
       </div>
     </div>
   </main>
@@ -50,6 +59,6 @@
 </script>
 <style scoped>
   .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
   }
 </style>

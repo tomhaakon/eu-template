@@ -1,5 +1,5 @@
 <template>
-  <p class="text-color4">{{ text }}</p>
+  <p class="font-NunitoSans text-color4">{{ text }}</p>
 </template>
 
 <script setup>

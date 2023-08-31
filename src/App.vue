@@ -2,25 +2,22 @@
   <!-- Access control -->
   <AccessControl />
   <BackgroundBlur v-if="dialogStore.activeDialog" @click="dialogStore.closeDialog()" />
-  <!-- Dialogs -->
 
+  <!-- Dialogs -->
   <div class="h-screen w-full absolute flex items-center">
     <Dialog v-if="dialogStore.activeDialog" />
-    <!-- <ContactDialog v-if="dialogStore.activeDialog === 'contactDialog'" />
-      <LoginDialog v-if="dialogStore.activeDialog === 'loginDialog'" />
-      <NewsDialog v-if="dialogStore.activeDialog === 'newsDialog'" /> -->
   </div>
   <!-- drawer -->
   <div class="drawer">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" ref="drawerCheckbox" />
     <div class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
-      <div class="w-full navbar sticky px-4 py-8">
+      <div class="w-full navbar sticky px-2 py-8">
         <div class="flex-1 px-2 mx-2">
           <RouterLink to="/"> <Logo class="h-14" /></RouterLink>
         </div>
         <!-- Mobile Navbar -->
-        <div class="flex-none lg:hidden px-4">
+        <div class="flex-none lg:hidden px-2">
           <!-- Icon: Contact -->
           <div class="cursor-pointer" @click="dialogStore.openContactDialog()">
             <ContactButton />
@@ -33,7 +30,7 @@
           </div>
         </div>
         <!-- Desktop Navbar -->
-        <div class="flex-none hidden lg:block px-4">
+        <div class="flex-none hidden lg:block px-2">
           <ul class="menu menu-horizontal">
             <!-- Navbar desktop links -->
             <li><RouterLink to="/interesting">Interesting</RouterLink></li>
@@ -45,7 +42,7 @@
         </div>
       </div>
       <!-- Divider in color -->
-      <section class="mx-auto w-full px-4">
+      <section class="mx-auto w-full px-2">
         <Divider class="bg-color3" />
       </section>
       <!-- Page content here -->
