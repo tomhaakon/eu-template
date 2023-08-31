@@ -1,5 +1,8 @@
 <template>
-  <div class="fixed w-screen h-screen backdrop-blur-md z-50 flex justify-center items-center">
+  <div
+    class="fixed w-screen h-screen backdrop-blur-md z-50 flex justify-center items-center"
+    v-if="!accessControl"
+  >
     <div class="join join-vertical max-w-xs py-10 border-2 bg-white fixed w-full flex px-4">
       <div class="w-full flex join-item flex-col px-4">
         <p class="text-lg font-bold pb-10" :class="isClientBlocked ? ' 0' : ''">
@@ -29,7 +32,7 @@
           <div v-if="isClientBlocked">
             <p>You are blocked from making further attempts.</p>
           </div>
-          <p v-else>Password is incorrect. You have {{ attemptCounter }} tries left.</p>
+          <p v-else>Password is incorrect. <br />You have {{ attemptCounter + 1 }} tries left.</p>
         </div>
       </div>
     </div>
@@ -47,6 +50,7 @@
   const enteredPassword = ref('');
   const attemptCounter = ref(2);
   const isClientBlocked = ref(localStorage.getItem('isBlocked') === 'true');
+  const accessControl = ref(localStorage.getItem('accessControl') === 'true');
 
   //consts
   const knownPassword = 'prios';
@@ -76,14 +80,14 @@
 
   //check password
   const checkPassword = async () => {
-    // if counter is 0, set localStorage to true
+    // if counter is 0 or less, set localStorage to true and isClientBlocked true
     if (attemptCounter.value <= 0) {
-      console.log('block');
       localStorage.setItem('isBlocked', 'true');
       isClientBlocked.value = true;
 
       return; // Early exit if the client becomes blocked
     }
+    // isClientBlocked true?
     if (isClientBlocked.value) {
       return; // Early exit if the client is already blocked
     }
@@ -94,10 +98,15 @@
     const enteredHash = await hashPassword(enteredPassword.value);
 
     //password is checked and is correct
-    isPasswordCorrect.value = knownHash === enteredHash;
-
-    //password checked and it is not correct
+    if (knownHash === enteredHash) {
+      isPasswordCorrect.value = true;
+      accessControl.value = true;
+      localStorage.setItem('accessControl', true);
+    }
     passwordChecked.value = true;
+    if (isPasswordCorrect.value) {
+    }
+    //password checked and it is not correct
 
     if (!isPasswordCorrect.value) {
       attemptCounter.value = attemptCounter.value - 1;
