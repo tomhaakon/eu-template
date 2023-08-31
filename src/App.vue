@@ -1,24 +1,17 @@
 <template>
-  <!-- dialog -->
+  <!-- Access control -->
   <AccessControl />
+  <BackgroundBlur v-if="dialogStore.activeDialog" @click="dialogStore.closeDialog()" />
+  <!-- Dialogs -->
 
-  <section v-if="dialogStore.activeDialog === 'contactDialog'">
-    <ContactDialog />
-  </section>
-  <section v-if="dialogStore.activeDialog === 'loginDialog'">
-    <LoginDialog />
-  </section>
-  <section v-if="dialogStore.activeDialog === 'newsDialog'">
-    <NewsDialog />
-  </section>
-  <!-- overlay -->
-  <div
-    v-if="dialogStore.activeDialog !== null"
-    class="fixed h-full w-full bg-black z-10 opacity-20"
-  ></div>
-
+  <div class="h-screen w-full absolute flex items-center">
+    <Dialog v-if="dialogStore.activeDialog" />
+    <!-- <ContactDialog v-if="dialogStore.activeDialog === 'contactDialog'" />
+      <LoginDialog v-if="dialogStore.activeDialog === 'loginDialog'" />
+      <NewsDialog v-if="dialogStore.activeDialog === 'newsDialog'" /> -->
+  </div>
   <!-- drawer -->
-  <div class="drawer" :class="[dialogStore.activeDialog ? 'fixed blur-[1px]' : '']">
+  <div class="drawer">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" ref="drawerCheckbox" />
     <div class="drawer-content flex flex-col min-h-screen">
       <!-- Navbar -->
@@ -58,6 +51,7 @@
       <!-- Page content here -->
 
       <!-- routerview -->
+
       <RouterView />
       <!-- footer -->
       <Footer />
@@ -105,10 +99,8 @@
   import { useDialogStore } from './stores/DialogStore.js';
 
   //import dialog
-  import NewsDialog from './components/NewsDialog.vue';
-  import ContactDialog from './components/ContactDialog.vue';
-  import LoginDialog from './components/LoginDialog.vue';
   import AccessControl from './components/AccessControl.vue';
+  import Dialog from './components/Dialog.vue';
 
   //import buttons logo etc
   import ContactButton from './components/buttons/ContactButton.vue';
@@ -120,6 +112,7 @@
   //text components
   import TitleComponent from '@/components/TitleComponent.vue';
   import SubTitleComponent from '@/components/SubTitleComponent.vue';
+  import BackgroundBlur from './components/BackgroundBlur.vue';
 
   //consts
   const dialogStore = useDialogStore();
