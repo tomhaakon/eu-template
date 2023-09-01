@@ -118,6 +118,5 @@
     isClientBlocked.value = localStorage.getItem('isBlocked') === 'true';
   };
   initialize(); // Call this to initialize the state based on localStorage
-  console.log('VITE_APP_KEY:', import.meta.env.VITE_APP_KEY);
   //end
 </script>
