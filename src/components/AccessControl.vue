@@ -56,7 +56,7 @@
   //pwassword
   // Fetch environment variables using import.meta
   const knownPassword = import.meta.env.VITE_APP_PASSWORD;
-  const key = import.meta.env.VITE_APP_KEY || 'fallback_key';
+  const key = import.meta.env.VITE_APP_KEY;
 
   //functions
   const hashPassword = async (password) => {
