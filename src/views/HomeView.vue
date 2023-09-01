@@ -48,6 +48,7 @@
   //text components
   import TitleComponent from '../components/TitleComponent.vue';
   import SubTitleComponent from '../components/SubTitleComponent.vue';
+  import CommonTextComponent from '../components/CommonTextComponent.vue';
 
   //components
   import NewsComponent from '../components/NewsComponent.vue';

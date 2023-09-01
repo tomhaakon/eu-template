@@ -1,7 +1,17 @@
 <template>
-  <div></div>
+  <div class="border-2 border-color3 mx-4 p-4 mt-4">
+    <SubTitleComponent :subTitle="'Partner1'" />
+    <button class="btn btn-primary">read more</button>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+  //import
+  import { useDialogStore } from '../stores/DialogStore';
+  import TitleComponent from '../components/TitleComponent.vue';
+  import SubTitleComponent from '../components/SubTitleComponent.vue';
+  import CommonTextComponent from '../components/CommonTextComponent.vue';
 
-<style lang="scss" scoped></style>
+  //const
+  const dialogStore = useDialogStore();
+</script>

@@ -1,6 +1,6 @@
 <!-- TitleComponent.vue -->
 <template>
-  <p class="font-NunitoSans text-2xl text-color4">{{ subTitle }}</p>
+  <p class="font-NunitoSans text-2xl text-color4 font-bold">{{ subTitle }}</p>
 </template>
 
 <script setup>
