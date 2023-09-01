@@ -56,7 +56,7 @@
   //pwassword
   // Fetch environment variables using import.meta
   const knownPassword = import.meta.env.VITE_APP_PASSWORD;
-  const key = import.meta.env.VITE_APP_KEY;
+  const key = import.meta.env.VITE_APP_KEY || 'fallback_key';
 
   //functions
   const hashPassword = async (password) => {
@@ -118,6 +118,6 @@
     isClientBlocked.value = localStorage.getItem('isBlocked') === 'true';
   };
   initialize(); // Call this to initialize the state based on localStorage
-
+  console.log('VITE_APP_KEY:', import.meta.env.VITE_APP_KEY);
   //end
 </script>

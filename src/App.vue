@@ -60,10 +60,10 @@
         <RouterLink to="/" class=""> <Logo class="h-14" @click="handleClick()" /></RouterLink>
 
         <LanguageSelector />
-        <section class="mx-auto w-full px-1 py-5">
+        <section class="mx-auto w-full px-1 pt-5">
           <Divider class="bg-color3" />
         </section>
-        <li class="pt-10">
+        <li class="pt-5">
           <RouterLink to="/interesting" @click="handleClick()">
             <SubTitleComponent :subTitle="$t('pages.interesting')" />
           </RouterLink>
@@ -84,6 +84,11 @@
         <li class="cursor-pointer" @click="handleClick(), dialogStore.openLoginDialog()">
           <SubTitleComponent :subTitle="$t('pages.login')" />
         </li>
+        <Divider class="bg-color3 my-5" />
+        <li><SubTitleComponent :subTitle="$t('vertical-menu.circular-economy')" /></li>
+        <li><SubTitleComponent :subTitle="$t('vertical-menu.business-models')" /></li>
+        <li><SubTitleComponent :subTitle="$t('vertical-menu.self-assessment')" /></li>
+        <li><SubTitleComponent :subTitle="$t('vertical-menu.master-lab')" /></li>
       </ul>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
-  <TitleComponent :title="'Contact us'" class="text-color3" />
-  <form class="py-5 join-vertical join input-group">
+  <TitleComponent :title="'Contact us'" class="text-color3 px-4" />
+  <form class="py-5 join-vertical join input-group px-4">
     <Divider class="bg-color3" />
     <!--Name input-->
     <input type="text" id="username" placeholder="Name" class="input join-item input-bordered" />

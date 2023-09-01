@@ -3,7 +3,7 @@
   <div class="w-full z-30 fixed">
     <!-- news dialog -->
     <div
-      class="px-4 mx-4 bg-white py-10 rounded-lg"
+      class="mx-4 bg-white py-10 rounded-lg"
       :class="dialogStore.activeDialog === 'news' ? 'border-2 border-color3' : ''"
     >
       <!-- Text inside here -->
