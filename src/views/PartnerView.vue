@@ -4,7 +4,7 @@
     <img :src="$t('partners.partner1.logo')" class="w-full h-40" />
     <SubTitleComponent :subTitle="$t('partners.partner1.title')" class="py-2 line-clamp-1" />
     <button
-      class="btn btn-primary w-full btn-sm align-bottom"
+      class="btn w-full btn-sm bg-color3 text-white"
       @click="dialogStore.openPartnerDialog('partner1')"
     >
       read more
@@ -14,7 +14,7 @@
     <img :src="$t('partners.partner2.logo')" class="w-full h-40" />
     <SubTitleComponent :subTitle="$t('partners.partner2.title')" class="py-2" />
     <button
-      class="btn btn-primary w-full btn-sm"
+      class="btn text-white bg-color3 w-full btn-sm"
       @click="dialogStore.openPartnerDialog('partner2')"
     >
       read more
