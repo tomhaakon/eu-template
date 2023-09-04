@@ -1,10 +1,10 @@
 <template>
   <div class="px-2 pt-2"><TitleComponent :title="'Partners'" /></div>
-  <div class="border-2 border-color3 mx-10 p-4 mt-4 h-80">
+  <div class="border-2 border-color3 mx-10 p-4 mt-4 h-72">
     <img :src="$t('partners.partner1.logo')" class="w-full h-40" />
-    <SubTitleComponent :subTitle="$t('partners.partner1.title')" class="py-2" />
+    <SubTitleComponent :subTitle="$t('partners.partner1.title')" class="py-2 line-clamp-1" />
     <button
-      class="btn btn-primary w-full btn-sm"
+      class="btn btn-primary w-full btn-sm align-bottom"
       @click="dialogStore.openPartnerDialog('partner1')"
     >
       read more

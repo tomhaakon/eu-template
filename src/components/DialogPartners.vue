@@ -1,8 +1,8 @@
 <template>
-  <div class="px-4 max-h-[70vh] overflow-auto" v-if="dialogStore.activeDialog === 'partner'">
+  <div class="px-4 max-h-[70vh] overflow-auto w-full" v-if="dialogStore.activeDialog === 'partner'">
     <div v-if="dialogStore.showPartner === 'partner1'">
       <TitleComponent :title="$t('partners.partner1.title')" class="text-color3 px-4" />
-      <img :src="$t('partners.partner1.logo')" class="w-full h-40 my-6 px-4" />
+      <img :src="$t('partners.partner1.logo')" class="h-40 my-6 px-4" />
       <CommonTextComponent :text="$t('partners.partner1.about')" class="px-4" />
     </div>
     <div v-if="dialogStore.showPartner === 'partner2'">
