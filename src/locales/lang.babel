@@ -343,6 +343,25 @@
 						</translations>
 					</concept_node>
 					<concept_node>
+						<name>partners.partner1.about</name>
+						<description/>
+						<comment/>
+						<translations>
+							<translation>
+								<language>bg-BG</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>en-GB</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>nb-NO</language>
+								<approved>false</approved>
+							</translation>
+						</translations>
+					</concept_node>
+					<concept_node>
 						<name>partners.partner1.homepage</name>
 						<description/>
 						<comment/>
@@ -401,6 +420,101 @@
 					</concept_node>
 					<concept_node>
 						<name>partners.partner1.title</name>
+						<description/>
+						<comment/>
+						<translations>
+							<translation>
+								<language>bg-BG</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>en-GB</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>nb-NO</language>
+								<approved>false</approved>
+							</translation>
+						</translations>
+					</concept_node>
+					<concept_node>
+						<name>partners.partner2.about</name>
+						<description/>
+						<comment/>
+						<translations>
+							<translation>
+								<language>bg-BG</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>en-GB</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>nb-NO</language>
+								<approved>false</approved>
+							</translation>
+						</translations>
+					</concept_node>
+					<concept_node>
+						<name>partners.partner2.homepage</name>
+						<description/>
+						<comment/>
+						<translations>
+							<translation>
+								<language>bg-BG</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>en-GB</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>nb-NO</language>
+								<approved>false</approved>
+							</translation>
+						</translations>
+					</concept_node>
+					<concept_node>
+						<name>partners.partner2.logo</name>
+						<description/>
+						<comment/>
+						<translations>
+							<translation>
+								<language>bg-BG</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>en-GB</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>nb-NO</language>
+								<approved>false</approved>
+							</translation>
+						</translations>
+					</concept_node>
+					<concept_node>
+						<name>partners.partner2.somelinks</name>
+						<description/>
+						<comment/>
+						<translations>
+							<translation>
+								<language>bg-BG</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>en-GB</language>
+								<approved>false</approved>
+							</translation>
+							<translation>
+								<language>nb-NO</language>
+								<approved>false</approved>
+							</translation>
+						</translations>
+					</concept_node>
+					<concept_node>
+						<name>partners.partner2.title</name>
 						<description/>
 						<comment/>
 						<translations>

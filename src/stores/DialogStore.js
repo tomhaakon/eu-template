@@ -4,6 +4,7 @@ export const useDialogStore = defineStore('DialogStore', {
   state: () => ({
     activeDialog: null,
     blurBg: false,
+    showPartner: null,
   }),
   actions: {
     openContactDialog() {
@@ -18,7 +19,15 @@ export const useDialogStore = defineStore('DialogStore', {
       this.activeDialog = 'news';
       console.log(this.activeDialog);
     },
+    openPartnerDialog(partner) {
+      this.activeDialog = 'partner';
+      this.showPartner = partner;
+      console.log(partner);
+    },
     closeDialog() {
+      if (this.showPartner !== null) {
+        this.showPartner = null;
+      }
       if (!this.activeDialog) {
         return;
       }

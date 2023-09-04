@@ -10,7 +10,10 @@
   <!-- drawer -->
   <div class="drawer">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" ref="drawerCheckbox" />
-    <div class="drawer-content flex flex-col min-h-screen">
+    <div
+      class="drawer-content flex flex-col min-h-screen"
+      :class="dialogStore.activeDialog ? 'fixed' : ''"
+    >
       <!-- Navbar -->
       <div class="w-full navbar sticky px-2 py-8">
         <div class="flex-1 px-2 mx-2">
@@ -48,8 +51,9 @@
       <!-- Page content here -->
 
       <!-- routerview -->
-
-      <RouterView />
+      <div>
+        <RouterView />
+      </div>
       <!-- footer -->
       <Footer />
     </div>

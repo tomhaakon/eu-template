@@ -11,6 +11,7 @@
       <DialogNews v-if="dialogStore.activeDialog === 'news'" />
       <DialogContact v-if="dialogStore.activeDialog === 'contact'" />
       <DialogLogin v-if="dialogStore.activeDialog === 'login'" />
+      <DialogPartners v-if="dialogStore.activeDialog === 'partner'" />
     </div>
   </div>
 </template>
@@ -29,6 +30,7 @@
   import SubTitleComponent from '@/components/SubTitleComponent.vue';
   import CommonTextComponent from '@/components/CommonTextComponent.vue';
   import DialogContact from './DialogContact.vue';
+  import DialogPartners from './DialogPartners.vue';
 
   //consts
   const dialogStore = useDialogStore();
