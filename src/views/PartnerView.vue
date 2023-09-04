@@ -1,7 +1,13 @@
 <template>
-  <div class="border-2 border-color3 mx-4 p-4 mt-4">
-    <SubTitleComponent :subTitle="'Partner1'" />
-    <button class="btn btn-primary">read more</button>
+  <div class="border-2 border-color3 mx-10 p-4 mt-4 h-80">
+    <img :src="$t('partners.partner1.logo')" class="w-full h-40" />
+    <SubTitleComponent :subTitle="$t('partners.partner1.title')" class="py-2" />
+    <button class="btn btn-primary w-full btn-sm">read more</button>
+  </div>
+  <div class="border-2 border-color3 mx-10 p-4 mt-4 h-72">
+    <img :src="$t('partners.partner2.logo')" class="w-full h-40" />
+    <SubTitleComponent :subTitle="$t('partners.partner2.title')" class="py-2" />
+    <button class="btn btn-primary w-full btn-sm">read more</button>
   </div>
 </template>
 
